@@ -27,11 +27,11 @@
           canvas.height = image.height;
           context.drawImage(image, 0, 0);
         
-          var imageData;
+          
       
-         window.onload = function() {
-            imageData = context.getImageData(0, 0, context.canvas.width, context.canvas.height);
-         }
+
+       
+       
 
       
       function myFunctionTWO(imageData){
@@ -78,6 +78,7 @@
 
       
       withoutButton.addEventListener('click', function () {
+        var imageData = context.getImageData(0, 0, context.canvas.width, context.canvas.height);
         myFunctionTWO(imageData)       
       });
 
