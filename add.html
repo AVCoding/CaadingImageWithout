@@ -30,10 +30,9 @@
             canvas.height = image.height;
             context.drawImage(image, 0, 0);
             imageData = context.getImageData(0, 0, context.canvas.width, context.canvas.height);
-          };
-      
-          
-          console.time('Function #2');
+            
+            
+               console.time('Function #2');
           for (let i = 0; i < imageData.data.length; i += 4) {
               if ( imageData.data[i] < 100) {
                   imageData.data[i] = 255;
@@ -67,6 +66,10 @@
           context.putImageData(imageData, 0, 0);
           console.timeEnd('Function #2')
          
+          };
+      
+          
+       
           
 
         
