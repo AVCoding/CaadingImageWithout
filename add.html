@@ -15,7 +15,7 @@
     <button id="withoutButton">Without</button>
     
     <script type='text/javascript'> 
-        var withoutButton = document.getElementById('withoutButton');
+        //var withoutButton = document.getElementById('withoutButton');
    
           var canvas;
           var context;
@@ -29,9 +29,10 @@
             canvas.width = image.width;
             canvas.height = image.height;
             context.drawImage(image, 0, 0);
+            var imageData = context.getImageData(0, 0, context.canvas.width, context.canvas.height);
           };
       
-          var imageData = context.getImageData(0, 0, context.canvas.width, context.canvas.height);
+          
           console.time('Function #2');
           for (let i = 0; i < imageData.data.length; i += 4) {
               if ( imageData.data[i] < 100) {
