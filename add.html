@@ -21,7 +21,7 @@
           var context;
           var image = document.getElementById('SourceImage');
           canvas = document.getElementById('Canvas');
-       
+          var imageData;
           image.onload = function(){
             context = canvas.getContext('2d');
             context.drawImage(image,0,0);
@@ -29,7 +29,7 @@
             canvas.width = image.width;
             canvas.height = image.height;
             context.drawImage(image, 0, 0);
-            var imageData = context.getImageData(0, 0, context.canvas.width, context.canvas.height);
+            imageData = context.getImageData(0, 0, context.canvas.width, context.canvas.height);
           };
       
           
