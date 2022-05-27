@@ -36,7 +36,7 @@
               });
           }
       
-          a().then(function() {
+          a().then(function(imageData) {
               for (let i = 0; i < 20; i++) {
                     console.time('Function #2');
                     for (let i = 0; i < imageData.data.length; i += 4) {
@@ -71,7 +71,7 @@
                          console.timeEnd('Function #2');
                   }
               }
-                resolve();
+
           })
 
       
