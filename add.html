@@ -30,19 +30,13 @@
                   canvas.width = image.width;
                   canvas.height = image.height;
                   context.drawImage(image, 0, 0);
+                  imageData = context.getImageData(0, 0, canvas.width, canvas.height);
                  }
                   resolve();
               });
           }
       
-          function b() {
-              return new Promise(function(resolve) {
-                  imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-                  resolve();
-              });
-          }
-      
-          a().then(b).then(function() {
+          a().then(function() {
               for (let i = 0; i < 20; i++) {
                     console.time('Function #2');
                     for (let i = 0; i < imageData.data.length; i += 4) {
